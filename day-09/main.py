@@ -2,7 +2,7 @@ def get_num(line):
     next_num = 0
     prev_num = 0
     line = list(map(int, line.split()))
-    plus =True
+    plus = True
     while True:
         new_line = [a-b for a, b in zip(line[1:], line[:-1])]
         next_num += line[-1]
@@ -13,9 +13,10 @@ def get_num(line):
         plus = not plus
         if not any(new_line):
             break
-        else: 
+        else:
             line = new_line
-    return prev_num , next_num
+
+    return prev_num, next_num
 
 
 def solve(filename):
@@ -27,6 +28,7 @@ def solve(filename):
             result += next_num
             result2 += prev_num
     print(result, result2)
+
 
 if __name__ == "__main__":
     solve("test.txt")
