@@ -100,6 +100,20 @@ def solve(filename):
         perimeter.append([next_p[0], next_p[1]])
     print(steps/2)
 
+    count = 0
+    for x in range(max_row):
+        tp = 0
+        bp = 0
+
+        for y in range(max_col):
+            if [x, y] in perimeter and input[x][y] in '|LJ':
+                tp += 1
+            if [x, y] in perimeter and input[x][y] in '|7F':
+                bp += 1
+            if bp % 2 and tp % 2 and [x, y] not in perimeter:
+                count += 1
+    print(count)
+
 
 if __name__ == "__main__":
     solve("test.txt")
