@@ -32,6 +32,7 @@ def solve(filename):
 
     galaxy_combinations = combinations(galaxy.keys(), 2)
     result = 0
+    result2 = 0
     for g_x, g_y in galaxy_combinations:
         a, b = galaxy[g_x]
         x, y = galaxy[g_y]
@@ -46,7 +47,12 @@ def solve(filename):
             len(expanded_row) + len(expanded_col)
         result += distance
 
+        distance2 = no_expansion_distance + 999_999 * \
+            len(expanded_row) + 999_999*len(expanded_col)
+        result2 += distance2
+
     print(result)
+    print(result2)
 
 
 solve("test.txt")
