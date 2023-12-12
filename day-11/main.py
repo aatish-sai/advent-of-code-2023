@@ -1,4 +1,3 @@
-
 def solve(filename):
     no_galaxy_row = []
     no_galaxy_col = []
